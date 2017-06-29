@@ -16,6 +16,19 @@ export default class ChangeCityButtons extends Component {
 		this.changeCityForecast = this.changeCityForecast.bind(this);
 	}
 
+	shouldComponentUpdate(nextProps, nextState) {
+		return this.props !== nextProps || this.state.index !== nextState.index;
+	}
+
+	componentWillReceiveProps(nextProps){
+
+		if (this.props.index !== nextProps.index) {
+			this.setState({
+				index: nextProps.index
+			});
+		}
+	}
+
 	changeCityForecast(index){
 		this.props.changeCity(index);
 	}
@@ -29,6 +42,7 @@ export default class ChangeCityButtons extends Component {
 				key={index}
 				index={index}
 				data={data}
+				isActive={this.state.index === index ? ' w_w_current' : ''}
 				changeCityForecast={this.changeCityForecast}
 			/>
 		);

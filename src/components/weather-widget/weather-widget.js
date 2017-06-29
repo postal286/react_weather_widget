@@ -30,11 +30,10 @@ export class WeatherWidget extends Component {
 
 	componentDidMount() {
 		this.getData(query);
-		this.timer = setInterval( () => this.getData(query), 300000);
+		this.timer = setInterval( () => this.getData(query), 30000);
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
-		console.log(JSON.stringify(this.state.data) !== JSON.stringify(nextState.data) || this.state.index !== nextState.index);
 		return this.props !== nextProps || JSON.stringify(this.state.data) !== JSON.stringify(nextState.data) || this.state.index !== nextState.index;
 	}
 
@@ -80,7 +79,7 @@ export class WeatherWidget extends Component {
 
 			component =
 
-				<div>
+				<div className="weather-widget__wrapper_inner">
 					<ChangeCityButtons
 						index={this.state.index}
 						changeCity={this.changeCity}
@@ -93,8 +92,6 @@ export class WeatherWidget extends Component {
 					/>
 				</div>
 		}
-
-		console.log('render');
 
 		return (
 			<div className="weather-widget__wrapper">

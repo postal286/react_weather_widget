@@ -2,13 +2,18 @@
 
 .weather-widget__wrapper {
 	font-family: 'Amatic SC', sans-serif, Arial;
-	padding: 25px 10px 25px 10px;
 	color: white;
+	padding: 10px;
 	background: #333 url("./img/background.jpg") no-repeat;
 	background-size: cover;
 	width: 500px;
 	margin: 0 auto;
 	border: 0;
+	border-radius: 20px;
+}
+
+.weather-widget__wrapper_inner {
+	border: 1px dashed rgba(255,255,255, 1);
 	border-radius: 20px;
 }
 
@@ -26,9 +31,6 @@
 
 .weather-widget__content_icon {
 	text-align: center;
-}
-
-.weather-widget__content_icon img {
 }
 
 .weather-widget__content_second-title{
@@ -55,7 +57,7 @@
 
 .weather-widget__buttons-wrapper{
 	text-align: center;
-	margin: 0 auto;
+	margin: 20px auto 0;
 }
 
 .weather-widget__button {
@@ -75,11 +77,15 @@
 	transition: 0.2s;
 }
 
+.w_w_current {
+	box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 0 20px 5px rgba(255, 255, 255, 0.4);
+}
+
 .weather-widget__button:hover {
 	background: rgba(255,255,255,.2);
 }
 
 .weather-widget__button:active {
-	background: #EBEBEB;
-	color: #343434;
+	background: #E6E6E6;
+	color: #000;
 }
