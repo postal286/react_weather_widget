@@ -52,3 +52,34 @@
 	font-size: 30px;
 	text-align: center;
 }
+
+.weather-widget__buttons-wrapper{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.weather-widget__button {
+	margin: 10px;
+	font-size: 20px;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	color: white;
+	font-weight: 700;
+	text-decoration: none;
+	user-select: none;
+	padding: .5em 2em;
+	outline: none;
+	border: 1px solid;
+	border-radius: 30px;
+	transition: 0.2s;
+}
+
+.weather-widget__button:hover {
+	background: rgba(255,255,255,.2);
+}
+
+.weather-widget__button:active {
+	background: #EBEBEB;
+	color: #343434;
+}

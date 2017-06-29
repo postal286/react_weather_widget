@@ -6,27 +6,27 @@ export default class WeatherInformation extends Component {
 		super(props);
 
 		this.state = {
-			paramsWeather: props.paramsWeather
+			index: props.index,
+			data: props.data
 		}
 	}
 
 	componentWillReceiveProps(nextProps){
-		if (JSON.stringify(nextProps.paramsWeather) !== JSON.stringify(this.props.paramsWeather)) {
+		if (JSON.stringify(nextProps.data) !== JSON.stringify(this.props.data) || this.props.index !== nextProps.index) {
 			this.setState({
-				paramsWeather: nextProps.paramsWeather
+				data: nextProps.data
 			});
 		}
 	}
 
 	render() {
-
-		let {paramsWeather} = this.state,
-				name = paramsWeather.name,
-				temp = paramsWeather.temp,
-				weather = paramsWeather.weather,
-				wind = paramsWeather.wind,
-				clouds = paramsWeather.clouds,
-				icon = paramsWeather.icon;
+		let {data} = this.state,
+				name = data.name,
+				icon = data.weather[0].icon,
+				temp = Math.round(data.main.temp),
+				weather = data.weather[0].main,
+				wind = Math.round(data.wind.speed),
+				clouds = data.clouds.all;
 
 		return (
 			<div className="weather-widget__content">
