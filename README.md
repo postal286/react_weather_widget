@@ -1,3 +1,5 @@
+Simple weather widget with 3 cities. Feel free to use it in your projects. Hope you'll like it! :)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
