@@ -30,14 +30,14 @@ export class WeatherWidget extends Component {
 
 	componentDidMount() {
 		this.getData(query);
-		this.timer = setInterval( () => this.getData(query), 30000);
+		this.timer = setInterval( () => this.getData(query), 600000);
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
 		return this.props !== nextProps || JSON.stringify(this.state.data) !== JSON.stringify(nextState.data) || this.state.index !== nextState.index;
 	}
 
-	componentWillUnmount() {
+    componentWillUnmount() {
 		clearInterval(this.timer);
 	}
 

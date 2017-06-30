@@ -39,7 +39,7 @@ export default class WeatherInformation extends Component {
 
 				<div className="weather-widget__content_icon">
 					<img
-						src={`http://openweathermap.org/img/w/${icon}.png`}
+						src={require(`./img/icons/${icon}.png`)}
 						alt="Weather-Icon"
 					/>
 				</div>
